@@ -26,6 +26,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'south',
     'django_wsgiserver',
+    'climbs',
 )
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
