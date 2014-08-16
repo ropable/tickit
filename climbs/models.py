@@ -16,7 +16,7 @@ class Business(TimeStampedModel):
     """Businesses own Walls and Climbs.
     Define a standard difficulty to use for climbing and bouldering routes.
     """
-    name = models.CharField(max_length=1024)
+    name = models.CharField(max_length=512)
     current = models.BooleanField(default=True)
 
     class Meta:
@@ -31,7 +31,10 @@ class Wall(TimeStampedModel):
     business = models.ForeignKey(Business)
     climb_type =  models.IntegerField(
         choices=CLIMB_TYPE, default=CLIMB_TYPE.toprope, null=True, blank=True)
-    order = models.IntegerField(null=True, blank=True)  # Arbitrary ordering.
+    position = models.PositiveIntegerField(null=True, blank=True)  # Arbitrary ordering.
+
+    class Meta:
+        ordering = ['business', 'position']
 
 
 class Climb(TimeStampedModel):
@@ -43,6 +46,9 @@ class Climb(TimeStampedModel):
     climb_type =  models.IntegerField(choices=CLIMB_TYPE, null=True, blank=True)
     business = models.ForeignKey(Business)
     wall = models.ForeignKey(Wall, null=True, blank=True)
-    order = models.IntegerField(null=True, blank=True)  # Arbitrary ordering.
+    position = models.PositiveIntegerField(null=True, blank=True)  # Arbitrary ordering.
     #difficulty_type
     difficulty_rating = models.CharField(max_length=16)
+
+    class Meta:
+        ordering = ['business', 'position']

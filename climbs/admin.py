@@ -7,11 +7,12 @@ class BusinessAdmin(admin.ModelAdmin):
 
 
 class WallAdmin(admin.ModelAdmin):
-    list_display = ('name', 'current', 'business', 'climb_type', 'order')
+    list_display = ('name', 'current', 'business', 'climb_type', 'position')
 
 
 class ClimbAdmin(admin.ModelAdmin):
-    list_display = ('name', 'current', 'business', 'wall', 'climb_type', 'order')
+    list_display = (
+        'name', 'current', 'business', 'wall', 'climb_type', 'position')
 
 
 admin.site.register(Business, BusinessAdmin)
