@@ -31,6 +31,9 @@ class Business(TimeStampedModel):
     class Meta:
         verbose_name_plural = 'businesses'
 
+    def __unicode__(self):
+        return u'{}'.format(self.name)
+
 
 class Wall(TimeStampedModel):
     """Walls belong to a business, and can be used to organise climbs.
@@ -44,6 +47,9 @@ class Wall(TimeStampedModel):
 
     class Meta:
         ordering = ['business', 'position']
+
+    def __unicode__(self):
+        return u'{} ({})'.format(self.name, self.business)
 
 
 class Climb(TimeStampedModel):
@@ -63,6 +69,9 @@ class Climb(TimeStampedModel):
     class Meta:
         ordering = ['business', 'position']
 
+    def __unicode__(self):
+        return u'{} ({})'.format(self.name, self.business)
+
 
 class Rating(TimeStampedModel):
     """Record user 'likes' or 'dislikes' of specific climbs.
@@ -70,3 +79,9 @@ class Rating(TimeStampedModel):
     user = models.ForeignKey(get_user_model())
     climb = models.ForeignKey(Climb)
     liked = models.NullBooleanField(default=None)  # +ve: liked
+
+    def __unicode__(self):
+        if self.liked:
+            return u'{} liked {}'.format(self.user, self.climb)
+        else:
+            return u'{} disliked {}'.format(self.user, self.climb)
