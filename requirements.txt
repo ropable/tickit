@@ -8,5 +8,8 @@ south==1.0
 django-extensions==1.3.8
 django-model-utils==2.0.3
 django-grappelli==2.5.3
+djangorestframework==2.3.14
+markdown==2.4.1  # Required for browsable API
+django-filter==0.7
 #django-braces==1.4.0
 #django-storages==1.1.8

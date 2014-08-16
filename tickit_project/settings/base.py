@@ -27,7 +27,9 @@ INSTALLED_APPS = (
     'django_extensions',
     'south',
     'django_wsgiserver',
+    'rest_framework',
     'climbs',
+    'people',
 )
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -44,11 +46,14 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
-    "django.core.context_processors.request",
+    "django.core.context_processors.request",  # Required by Grappelli
     "django.contrib.messages.context_processors.messages",
 )
 ROOT_URLCONF = 'tickit_project.urls'
 WSGI_APPLICATION = 'tickit_project.wsgi.application'
+
+# Authentication settings
+AUTH_USER_MODEL = 'people.ClimbsUser'
 ANONYMOUS_USER_ID = -1
 
 

@@ -1,4 +1,5 @@
 # Django imports
+from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils.translation import ugettext as _
 # Third-party app imports
@@ -11,13 +12,21 @@ CLIMB_TYPE = Choices(
     (1, 'lead', _('Lead')),
     (2, 'boulder', _('Boulder')),
 )
+GRADE_TYPE = Choices(
+    (0, 'ewbanks', _('Ewbanks')),
+    # TODO: additional grading systems
+)
+
 
 class Business(TimeStampedModel):
     """Businesses own Walls and Climbs.
-    Define a standard difficulty to use for climbing and bouldering routes.
+    Define a standard grade type to use for climbing and bouldering routes.
     """
     name = models.CharField(max_length=512)
     current = models.BooleanField(default=True)
+    #default_grade_type
+    #managers - M2M for business managers, can update business details, etc.
+    #employees - M2M for business staff, can update walls and climbs.
 
     class Meta:
         verbose_name_plural = 'businesses'
@@ -29,7 +38,7 @@ class Wall(TimeStampedModel):
     name = models.CharField(max_length=256)
     current = models.BooleanField(default=True)
     business = models.ForeignKey(Business)
-    climb_type =  models.IntegerField(
+    climb_type = models.IntegerField(
         choices=CLIMB_TYPE, default=CLIMB_TYPE.toprope, null=True, blank=True)
     position = models.PositiveIntegerField(null=True, blank=True)  # Arbitrary ordering.
 
@@ -43,12 +52,21 @@ class Climb(TimeStampedModel):
     """
     name = models.CharField(max_length=256)
     current = models.BooleanField(default=True)
-    climb_type =  models.IntegerField(choices=CLIMB_TYPE, null=True, blank=True)
+    climb_type = models.IntegerField(choices=CLIMB_TYPE, null=True, blank=True)
     business = models.ForeignKey(Business)
     wall = models.ForeignKey(Wall, null=True, blank=True)
     position = models.PositiveIntegerField(null=True, blank=True)  # Arbitrary ordering.
-    #difficulty_type
-    difficulty_rating = models.CharField(max_length=16)
+    grade_type = models.IntegerField(choices=GRADE_TYPE, null=True, blank=True)
+    grade = models.CharField(max_length=16)
+    # TODO: grading system validation
 
     class Meta:
         ordering = ['business', 'position']
+
+
+class Rating(TimeStampedModel):
+    """Record user 'likes' or 'dislikes' of specific climbs.
+    """
+    user = models.ForeignKey(get_user_model())
+    climb = models.ForeignKey(Climb)
+    liked = models.NullBooleanField(default=None)  # +ve: liked
