@@ -65,6 +65,7 @@ class Climb(TimeStampedModel):
     grade_type = models.IntegerField(choices=GRADE_TYPE, null=True, blank=True)
     grade = models.CharField(max_length=16)
     # TODO: grading system validation
+    # setter
 
     class Meta:
         ordering = ['business', 'position']
@@ -78,10 +79,10 @@ class Rating(TimeStampedModel):
     """
     user = models.ForeignKey(get_user_model())
     climb = models.ForeignKey(Climb)
-    liked = models.NullBooleanField(default=None)  # +ve: liked
+    like = models.NullBooleanField(default=None)  # +ve: liked it
 
     def __unicode__(self):
-        if self.liked:
+        if self.like:
             return u'{} liked {}'.format(self.user, self.climb)
         else:
             return u'{} disliked {}'.format(self.user, self.climb)

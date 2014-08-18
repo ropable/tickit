@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Business, Wall, Climb
+from .models import Business, Wall, Climb, Rating
 
 
 class BusinessAdmin(admin.ModelAdmin):
@@ -16,6 +16,11 @@ class ClimbAdmin(admin.ModelAdmin):
         'grade')
 
 
+class RatingAdmin(admin.ModelAdmin):
+    list_display = ('user', 'climb', 'like')
+
+
 admin.site.register(Business, BusinessAdmin)
 admin.site.register(Wall, WallAdmin)
 admin.site.register(Climb, ClimbAdmin)
+admin.site.register(Rating, RatingAdmin)
