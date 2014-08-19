@@ -23,13 +23,20 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',  # Required by allauth
     'django.contrib.staticfiles',
     'django_extensions',
     'south',
     'django_wsgiserver',
     'rest_framework',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    # Project apps
     'climbs',
     'people',
+    'pages',
 )
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -46,15 +53,29 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
-    "django.core.context_processors.request",  # Required by Grappelli
+    "django.core.context_processors.request",  # Required by Grappelli and allauth
     "django.contrib.messages.context_processors.messages",
+    # allauth specific context processors
+    "allauth.account.context_processors.account",
+    "allauth.socialaccount.context_processors.socialaccount",
+)
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+    os.path.join(BASE_DIR, 'pages', 'templates'),
 )
 ROOT_URLCONF = 'tickit_project.urls'
+SITE_ID = 1
 WSGI_APPLICATION = 'tickit_project.wsgi.application'
 
 # Authentication settings
 AUTH_USER_MODEL = 'people.ClimbsUser'
 ANONYMOUS_USER_ID = -1
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+    # `allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
 
 
 # Database
@@ -78,5 +99,4 @@ STATIC_URL = '/static/'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.FileSystemFinder',
-    #'compressor.finders.CompressorFinder',  # TODO: django-compressor
 )

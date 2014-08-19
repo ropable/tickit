@@ -28,7 +28,8 @@ NOSE_ARGS = [
     '--nologcapture',
     '--with-fixture-bundling',
     '--with-coverage',
-    '--cover-package=referral',
+    '--cover-package=climbs',
+    '--cover-package=people',
     '--verbosity=2',  # Nice, but tests take longer to run.
     '--detailed-errors']
 SOUTH_TESTS_MIGRATE = False

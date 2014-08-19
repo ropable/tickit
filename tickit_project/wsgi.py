@@ -10,4 +10,7 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tickit_project.settings")
 
 from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
+# Use dj-static to serve static files and uploaded media.
+from dj_static import Cling, MediaCling
+
+application = Cling(MediaCling(get_wsgi_application()))

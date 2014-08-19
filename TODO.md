@@ -3,6 +3,10 @@
 * Home page
 * About page
 
+# Authentication
+
+* Integrate django-allauth
+
 # Business admin
 
 * Business create/edit

@@ -6,13 +6,12 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^grappelli/', include('grappelli.urls')),
     (r'^admin/', include(admin.site.urls)),
+    (r'^accounts/', include('allauth.urls')),
+    (r'^', include('pages.urls')),
 )
 
 # Additional URLS for development/debug.
 if settings.DEBUG:
-    # Use local WSGI server to serve static files.
-    from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-    urlpatterns += staticfiles_urlpatterns()
     # Add in Debug Toolbar URLs.
     import debug_toolbar
     urlpatterns += patterns('',
