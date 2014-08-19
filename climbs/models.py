@@ -27,6 +27,10 @@ class Business(TimeStampedModel):
     #default_grade_type
     #managers - M2M for business managers, can update business details, etc.
     #employees - M2M for business staff, can update walls and climbs.
+    #email (primary)
+    #address
+    #location
+    #website
 
     class Meta:
         verbose_name_plural = 'businesses'
