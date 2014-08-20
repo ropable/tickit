@@ -47,13 +47,13 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.request",  # Required by Grappelli and allauth
     "django.contrib.auth.context_processors.auth",
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
     "django.core.context_processors.static",
     "django.core.context_processors.tz",
-    "django.core.context_processors.request",  # Required by Grappelli and allauth
     "django.contrib.messages.context_processors.messages",
     # allauth specific context processors
     "allauth.account.context_processors.account",
@@ -67,7 +67,9 @@ ROOT_URLCONF = 'tickit_project.urls'
 SITE_ID = 1
 WSGI_APPLICATION = 'tickit_project.wsgi.application'
 
+
 # Authentication settings
+LOGIN_REDIRECT_URL = '/'
 AUTH_USER_MODEL = 'people.ClimbsUser'
 ANONYMOUS_USER_ID = -1
 AUTHENTICATION_BACKENDS = (
@@ -76,6 +78,18 @@ AUTHENTICATION_BACKENDS = (
     # `allauth` specific authentication methods, such as login by e-mail
     "allauth.account.auth_backends.AuthenticationBackend",
 )
+# django-allauth configuration
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = ('email')
+SOCIALACCOUNT_QUERY_EMAIL = True
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'SCOPE': ['email', 'publish_stream'],
+        'METHOD': 'oauth2'  # 'js_sdk'
+    }
+}
 
 
 # Database
