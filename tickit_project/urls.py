@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^accounts/', include('allauth.urls')),
     (r'^', include('pages.urls')),
+    (r'^', include('climbs.urls')),
 )
 
 # Additional URLS for development/debug.
