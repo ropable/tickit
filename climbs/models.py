@@ -69,7 +69,8 @@ class Climb(TimeStampedModel):
     grade_type = models.IntegerField(choices=GRADE_TYPE, null=True, blank=True)
     grade = models.CharField(max_length=16)
     # TODO: grading system validation
-    # setter
+    #setter
+    #qr_hash
 
     class Meta:
         ordering = ['business', 'position']
