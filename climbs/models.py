@@ -10,7 +10,7 @@ from model_utils import Choices
 CLIMB_TYPE = Choices(
     (0, 'toprope', _('Top rope')),
     (1, 'lead', _('Lead')),
-    (2, 'boulder', _('Boulder')),
+    (2, 'bouldering', _('Bouldering')),
 )
 GRADE_TYPE = Choices(
     (0, 'ewbanks', _('Ewbanks')),
@@ -23,6 +23,7 @@ class Business(TimeStampedModel):
     Define a standard grade type to use for climbing and bouldering routes.
     """
     name = models.CharField(max_length=512)
+    slug = models.SlugField(max_length=128)
     current = models.BooleanField(default=True)
     #default_grade_type
     #managers - M2M for business managers, can update business details, etc.
@@ -31,6 +32,7 @@ class Business(TimeStampedModel):
     #address
     #location
     #website
+    #logo_image
 
     class Meta:
         verbose_name_plural = 'businesses'

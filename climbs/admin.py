@@ -4,6 +4,7 @@ from .models import Business, Wall, Climb, Rating
 
 class BusinessAdmin(admin.ModelAdmin):
     list_display = ('name', 'current')
+    prepopulated_fields = {'slug': ('name',)}
 
 
 class WallAdmin(admin.ModelAdmin):

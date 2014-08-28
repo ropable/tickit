@@ -1,5 +1,15 @@
-from django.views.generic import DetailView, FormView
-from .models import Climb
+from django.views.generic import CreateView, DetailView
+from .models import Business, Climb, Rating
+
+
+class BusinessCreate(CreateView):
+    model = Business
+    template_name = 'business_create.html'
+
+
+class BusinessDetail(DetailView):
+    model = Business
+    template_name = 'business_detail.html'
 
 
 class ClimbDetail(DetailView):
@@ -7,6 +17,6 @@ class ClimbDetail(DetailView):
     template_name = 'climb_detail.html'
 
 
-class ClimbRate(FormView):
-    model = Climb
-    template_name = 'climb_rate.html'
+class RatingCreate(CreateView):
+    model = Rating
+    template_name = 'rating_create.html'

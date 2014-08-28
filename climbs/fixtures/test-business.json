@@ -1,0 +1,35 @@
+[
+{
+    "pk": 1, 
+    "model": "climbs.business", 
+    "fields": {
+        "current": true, 
+        "slug": "the-hangout", 
+        "modified": "2014-08-28T13:34:02.750Z", 
+        "name": "The Hangout", 
+        "created": "2014-08-28T13:34:02.749Z"
+    }
+},
+{
+    "pk": 2, 
+    "model": "climbs.business", 
+    "fields": {
+        "current": true, 
+        "slug": "rock-face", 
+        "modified": "2014-08-28T13:34:11.221Z", 
+        "name": "Rock Face", 
+        "created": "2014-08-28T13:34:11.220Z"
+    }
+},
+{
+    "pk": 3, 
+    "model": "climbs.business", 
+    "fields": {
+        "current": true, 
+        "slug": "city-summit", 
+        "modified": "2014-08-28T13:34:30.801Z", 
+        "name": "City Summit", 
+        "created": "2014-08-28T13:34:30.799Z"
+    }
+}
+]

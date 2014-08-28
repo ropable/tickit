@@ -1,0 +1,80 @@
+[
+{
+    "pk": 1, 
+    "model": "climbs.wall", 
+    "fields": {
+        "name": "Right side wall", 
+        "business": 1, 
+        "created": "2014-08-28T13:35:06.352Z", 
+        "modified": "2014-08-28T13:35:06.354Z", 
+        "current": true, 
+        "climb_type": 0, 
+        "position": null
+    }
+},
+{
+    "pk": 2, 
+    "model": "climbs.wall", 
+    "fields": {
+        "name": "Back wall", 
+        "business": 1, 
+        "created": "2014-08-28T13:35:19.000Z", 
+        "modified": "2014-08-28T13:35:19.002Z", 
+        "current": true, 
+        "climb_type": 0, 
+        "position": null
+    }
+},
+{
+    "pk": 3, 
+    "model": "climbs.wall", 
+    "fields": {
+        "name": "Right wall", 
+        "business": 2, 
+        "created": "2014-08-28T13:35:39.607Z", 
+        "modified": "2014-08-28T13:35:39.609Z", 
+        "current": true, 
+        "climb_type": 0, 
+        "position": null
+    }
+},
+{
+    "pk": 4, 
+    "model": "climbs.wall", 
+    "fields": {
+        "name": "Lead wall", 
+        "business": 2, 
+        "created": "2014-08-28T13:35:53.770Z", 
+        "modified": "2014-08-28T13:35:53.772Z", 
+        "current": true, 
+        "climb_type": 1, 
+        "position": null
+    }
+},
+{
+    "pk": 5, 
+    "model": "climbs.wall", 
+    "fields": {
+        "name": "Spider Web wall", 
+        "business": 3, 
+        "created": "2014-08-28T13:36:10.232Z", 
+        "modified": "2014-08-28T13:36:10.234Z", 
+        "current": true, 
+        "climb_type": 0, 
+        "position": null
+    }
+},
+{
+    "pk": 6, 
+    "model": "climbs.wall", 
+    "fields": {
+        "name": "Dreamcatcher", 
+        "business": 3, 
+        "created": "2014-08-28T13:36:32.526Z", 
+        "modified": "2014-08-28T13:36:32.528Z", 
+        "current": true, 
+        "climb_type": 1, 
+        "position": null
+    }
+}
+]

@@ -1,7 +1,8 @@
 # Static
 
-* Home page
+* Home/landing page
 * About page
+* Help page
 
 # Authentication
 
@@ -11,6 +12,7 @@
 
 * Business create/edit
 * Wall create/edit
+* Print management
 * Climb create/edit
 * Paypal integration
 * Stripe integration
