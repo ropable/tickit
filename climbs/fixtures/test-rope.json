@@ -1,0 +1,57 @@
+[
+{
+    "pk": 1, 
+    "model": "climbs.rope", 
+    "fields": {
+        "current": true, 
+        "wall": 1, 
+        "modified": "2014-09-01T13:56:01.526Z", 
+        "name": "1", 
+        "created": "2014-09-01T13:56:01.523Z"
+    }
+},
+{
+    "pk": 2, 
+    "model": "climbs.rope", 
+    "fields": {
+        "current": true, 
+        "wall": 1, 
+        "modified": "2014-09-01T13:56:13.257Z", 
+        "name": "2", 
+        "created": "2014-09-01T13:56:13.255Z"
+    }
+},
+{
+    "pk": 3, 
+    "model": "climbs.rope", 
+    "fields": {
+        "current": true, 
+        "wall": 1, 
+        "modified": "2014-09-01T13:58:04.540Z", 
+        "name": "3", 
+        "created": "2014-09-01T13:58:04.538Z"
+    }
+},
+{
+    "pk": 4, 
+    "model": "climbs.rope", 
+    "fields": {
+        "current": true, 
+        "wall": 3, 
+        "modified": "2014-09-01T13:58:17.058Z", 
+        "name": "A", 
+        "created": "2014-09-01T13:58:17.055Z"
+    }
+},
+{
+    "pk": 5, 
+    "model": "climbs.rope", 
+    "fields": {
+        "current": true, 
+        "wall": 3, 
+        "modified": "2014-09-01T13:58:25.634Z", 
+        "name": "B", 
+        "created": "2014-09-01T13:58:25.631Z"
+    }
+}
+]

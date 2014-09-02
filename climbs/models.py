@@ -1,6 +1,7 @@
 # Django imports
 from django.contrib.auth import get_user_model
 from django.db import models
+from django.db.models import Q
 from django.utils.translation import ugettext as _
 # Third-party app imports
 from model_utils.models import TimeStampedModel
@@ -58,15 +59,27 @@ class Wall(TimeStampedModel):
         return u'{} ({})'.format(self.name, self.business)
 
 
+class Rope(TimeStampedModel):
+    """Rope represents a slot on a wall.
+    """
+    name = models.CharField(max_length=256, verbose_name='name/number')
+    current = models.BooleanField(default=True)
+    wall = models.ForeignKey(Wall)
+
+    def __unicode__(self):
+        return u'{} ({})'.format(self.name, self.wall)
+
+
 class Climb(TimeStampedModel):
     """Can be top-rope, lead or bouldering problem.
-    Climbs can optionally belong to Walls.
+    Climbs can optionally belong to Ropes and/or Walls.
     """
     name = models.CharField(max_length=256)
     current = models.BooleanField(default=True)
     climb_type = models.IntegerField(choices=CLIMB_TYPE, null=True, blank=True)
     business = models.ForeignKey(Business)
     wall = models.ForeignKey(Wall, null=True, blank=True)
+    rope = models.ForeignKey(Rope, null=True, blank=True)
     position = models.PositiveIntegerField(null=True, blank=True)  # Arbitrary ordering.
     grade_type = models.IntegerField(choices=GRADE_TYPE, null=True, blank=True)
     grade = models.CharField(max_length=16)
