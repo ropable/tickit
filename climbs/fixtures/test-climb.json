@@ -1,0 +1,70 @@
+[
+{
+    "pk": 1, 
+    "model": "climbs.climb", 
+    "fields": {
+        "rope": 1, 
+        "name": "Blue 15", 
+        "business": 1, 
+        "created": "2014-09-01T14:10:17.935Z", 
+        "wall": 1, 
+        "grade_type": null, 
+        "modified": "2014-09-01T14:10:17.942Z", 
+        "current": true, 
+        "grade": "15", 
+        "climb_type": 0, 
+        "position": null
+    }
+},
+{
+    "pk": 2, 
+    "model": "climbs.climb", 
+    "fields": {
+        "rope": 1, 
+        "name": "Green 20", 
+        "business": 1, 
+        "created": "2014-09-01T14:12:01.946Z", 
+        "wall": 1, 
+        "grade_type": null, 
+        "modified": "2014-09-01T14:12:01.954Z", 
+        "current": true, 
+        "grade": "20", 
+        "climb_type": 0, 
+        "position": null
+    }
+},
+{
+    "pk": 3, 
+    "model": "climbs.climb", 
+    "fields": {
+        "rope": 2, 
+        "name": "Brown 19", 
+        "business": 1, 
+        "created": "2014-09-01T14:12:19.905Z", 
+        "wall": 1, 
+        "grade_type": null, 
+        "modified": "2014-09-01T14:12:19.912Z", 
+        "current": true, 
+        "grade": "19", 
+        "climb_type": 0, 
+        "position": null
+    }
+},
+{
+    "pk": 4, 
+    "model": "climbs.climb", 
+    "fields": {
+        "rope": 2, 
+        "name": "Yellow 13", 
+        "business": 1, 
+        "created": "2014-09-01T14:12:50.890Z", 
+        "wall": 1, 
+        "grade_type": null, 
+        "modified": "2014-09-01T14:13:00.704Z", 
+        "current": true, 
+        "grade": "13", 
+        "climb_type": 0, 
+        "position": null
+    }
+}
+]
