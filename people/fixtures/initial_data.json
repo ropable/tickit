@@ -1,14 +1,13 @@
 [
 {
-    "pk": 1, 
-    "model": "people.climbsuser", 
+    "model": "people.climbsuser",
     "fields": {
-        "is_active": true, 
-        "date_of_birth": null, 
-        "last_login": "2014-08-28T13:29:56.967Z", 
-        "is_admin": true, 
-        "password": "pbkdf2_sha256$12000$Ai7tJbekOpaz$JdBxfjk5rQv0o2sZP33l68YpdsK8UxN/yMsgP3Z9aU8=", 
-        "email": "ashley@ropable.com"
+        "is_active": true,
+        "date_of_birth": null,
+        "last_login": "2014-08-28T13:29:56.967Z",
+        "is_admin": true,
+        "password": "pbkdf2_sha256$12000$Ai7tJbekOpaz$JdBxfjk5rQv0o2sZP33l68YpdsK8UxN/yMsgP3Z9aU8=",
+        "email": "admin@tickit.com"
     }
 }
 ]

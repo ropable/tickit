@@ -15,7 +15,7 @@ BASE_DIR = Path(__file__).ancestor(3)
 ALLOWED_HOSTS = []
 SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = False
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = DEBUG
 INSTALLED_APPS = (
     'grappelli',  # Needs to be before contrib.admin
     'django.contrib.admin',
@@ -88,7 +88,7 @@ SOCIALACCOUNT_QUERY_EMAIL = True
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
         'SCOPE': ['email', 'publish_stream'],
-        'METHOD': 'oauth2'  # 'js_sdk'
+        'METHOD': 'js_sdk'
     }
 }
 

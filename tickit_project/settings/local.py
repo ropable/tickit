@@ -7,6 +7,8 @@ from .base import *
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = ['*']
+# Req'd to get django-allauth working while we don't have a
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Additional apps installed in development env.
 INSTALLED_APPS += (
@@ -36,4 +38,4 @@ NOSE_ARGS = [
 SOUTH_TESTS_MIGRATE = False
 
 # Debug Toolbar settings.
-DEBUG_TOOLBAR_PATCH_SETTINGS = False
+DEBUG_TOOLBAR_PATCH_SETTINGS = True

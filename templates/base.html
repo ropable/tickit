@@ -7,8 +7,8 @@
     <meta name="author" content="{% block author %}{% endblock %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ pagetitle }}</title>
-    {% block extrahead %}{% endblock %}
+    <title>{% block head_title %}{% endblock %}</title>
+    {% block extra_head %}{% endblock %}
 
     <!-- Included CCS files -->
     <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/3.2/css/bootstrap.css" />
@@ -22,7 +22,7 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <!-- Block for extra CSS to be inserted at the template level -->
-    {% block extrastyle %}{% endblock %}
+    {% block extra_style %}{% endblock %}
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico">
@@ -48,12 +48,21 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li role="presentation" class="divider-vertical"><span>|</span></li>
+                     {% if user.is_authenticated %}
+                        <li><a href="{% url 'account_email' %}">Change E-mail</a></li>
+                        <li><a href="{% url 'account_logout' %}">Sign Out</a></li>
+                    {% else %}
+                        <li><a href="{% url 'account_login' %}">Sign In</a></li>
+                        <li><a href="{% url 'account_signup' %}">Sign Up</a></li>
+                    {% endif %}
+                    {% comment %}
                     <li><a href="#">Log in <span class="login-caret"></span></a></li>
                     <li class="hidden-xs">
                         <div>
                             <a id="btn-signup-top" class="btn btn-white btn-sm navbar-btn hidden-xs" href="#">Sign up</a>
                         </div>
                     </li>
+                    {% endcomment %}
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -83,7 +92,9 @@
         {% endif %}
 
         <!-- Page content -->
-        {% block pagecontent %}{% endblock %}
+        {% block content %}{% endblock %}
+
+        {% block extra_body %}{% endblock %}
 
         <!-- Footer -->
         {% block pagefooter %}{% endblock %}
