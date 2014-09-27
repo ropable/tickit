@@ -1,5 +1,6 @@
 [
 {
+    "pk": 1,
     "model": "people.climbsuser",
     "fields": {
         "is_active": true,

@@ -26,5 +26,19 @@
         "key": "", 
         "provider": "google"
     }
+},
+{
+    "pk": 3, 
+    "model": "socialaccount.socialapp", 
+    "fields": {
+        "name": "Twitter", 
+        "sites": [
+            1
+        ], 
+        "secret": "8HwGjXRROE2KYlw8hqI172oSvEZ13kKyzIwHwuoVYUBIqvwbX4", 
+        "client_id": "zsfb1Q5akih6q6zknKz5Yh6S2", 
+        "key": "", 
+        "provider": "twitter"
+    }
 }
 ]

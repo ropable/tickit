@@ -7,7 +7,7 @@ from .base import *
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = ['*']
-# Req'd to get django-allauth working while we don't have a
+# Req'd to get django-allauth working while we don't have a mail server running.
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Additional apps installed in development env.

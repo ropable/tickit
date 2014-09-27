@@ -33,6 +33,8 @@ INSTALLED_APPS = (
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.twitter',
     # Project apps
     'climbs',
     'people',
@@ -80,15 +82,20 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 # django-allauth configuration
+ACCOUNT_AUTHENTICATION_METHOD = ('email')
+ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_AUTHENTICATION_METHOD = ('email')
 SOCIALACCOUNT_QUERY_EMAIL = True
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
         'SCOPE': ['email', 'publish_stream'],
         'METHOD': 'js_sdk'
+    },
+    'google': {
+        'SCOPE': [
+            'https://www.googleapis.com/auth/userinfo.profile'],
+        'AUTH_PARAMS': {'access_type': 'online'}
     }
 }
 
