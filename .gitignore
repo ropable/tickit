@@ -5,6 +5,7 @@
 venv/
 media/
 staticfiles/
+logs/
 *.pyc
 *.swp
 *.swo
