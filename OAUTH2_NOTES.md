@@ -14,3 +14,7 @@ choose an email and input a product name on the 'Consent screen' menu
 entry beneath 'API & Auth'.
 * Hint via
   [StackOverflow](https://stackoverflow.com/questions/18677244/error-invalid-client-no-application-name).
+
+
+# Twitter
+* Nothing special required. No additional config in settings.
