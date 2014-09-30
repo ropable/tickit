@@ -33,6 +33,7 @@ NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=climbs',
     '--cover-package=people',
+    '--cover-package=pages',
     '--verbosity=2',  # Nice, but tests take longer to run.
     '--detailed-errors']
 
