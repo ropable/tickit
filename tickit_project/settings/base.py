@@ -26,7 +26,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',  # Required by allauth
     'django.contrib.staticfiles',
     'django_extensions',
-    'south',
     'django_wsgiserver',
     'rest_framework',
     'allauth',

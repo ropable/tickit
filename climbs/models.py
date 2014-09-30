@@ -1,8 +1,8 @@
 # Django imports
-from django.contrib.auth import get_user_model
+from django.conf import settings
 from django.db import models
-from django.db.models import Q
 from django.utils.translation import ugettext as _
+
 # Third-party app imports
 from model_utils.models import TimeStampedModel
 from model_utils import Choices
@@ -97,7 +97,7 @@ class Climb(TimeStampedModel):
 class Rating(TimeStampedModel):
     """Record user 'likes' or 'dislikes' of specific climbs.
     """
-    user = models.ForeignKey(get_user_model())
+    user = models.ForeignKey(settings.AUTH_USER_MODEL)
     climb = models.ForeignKey(Climb)
     like = models.NullBooleanField(default=None)  # +ve: liked it
 

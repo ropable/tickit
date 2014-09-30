@@ -1,4 +1,4 @@
-honcho run python manage.py syncdb --migrate --noinput --settings=tickit_project.settings.local
+honcho run python manage.py migrate --noinput --settings=tickit_project.settings.local
 honcho run python manage.py loaddata --settings=tickit_project.settings.local tickit_project/fixtures/sites.json
 honcho run python manage.py loaddata --settings=tickit_project.settings.local tickit_project/fixtures/socialapp.json
 honcho run python manage.py loaddata --settings=tickit_project.settings.local climbs/fixtures/test-business.json
