@@ -35,7 +35,6 @@ NOSE_ARGS = [
     '--cover-package=people',
     '--verbosity=2',  # Nice, but tests take longer to run.
     '--detailed-errors']
-SOUTH_TESTS_MIGRATE = False
 
 # Debug Toolbar settings.
 DEBUG_TOOLBAR_PATCH_SETTINGS = True

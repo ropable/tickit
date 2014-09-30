@@ -1,6 +1,9 @@
-from selenium import webdriver
+from django.test import TestCase
+#from django_nose import FastFixtureTestCase as TestCase
 
-browser = webdriver.Firefox()
-browser.get('http://localhost:8069')
 
-assert 'Climbing, shared.' in browser.page_source
+class HomePageTest(TestCase):
+
+    def test_root_url_uses_correct_template(self):
+        response = self.client.get('/')
+        self.assertTemplateUsed(response, 'index.html')

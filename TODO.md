@@ -17,11 +17,15 @@
 * Wall create/edit
 * Print management
 * Climb create/edit
-* CSV/Excel import
+* CSV/Excel import (existing climbs)
+* Circuits/climb groups
+* Competitions
+* Vouchers
 
 # Payment processing
 * Paypal integration
 * Stripe integration
+* Amazon payments
 
 # Gym customisation
 
@@ -34,7 +38,13 @@
 * Email verification workflow
 * Password reset
 * User avatar (Gravatar, Facebook)
+* Choose avatar from linked accounts
 * Self stats page
 * Link to Facebook
 * Link to Google+
 * Link to Twitter
+
+# Random ideas
+
+* User reputation/karma
+* User achievements

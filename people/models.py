@@ -39,7 +39,6 @@ class ClimbsUser(AbstractBaseUser):
     objects = ClimbsUserManager()
 
     USERNAME_FIELD = 'email'
-    #REQUIRED_FIELDS = ['date_of_birth']
 
     def get_full_name(self):
         # The user is identified by their email address
