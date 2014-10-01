@@ -1,4 +1,4 @@
-# Static
+# Static pages
 
 * Home/landing page
 * About page
@@ -34,10 +34,11 @@
 
 # User admin
 
+* User dashboard
 * Self details create/edit
 * Email verification workflow
-* Password reset
-* User avatar (Gravatar, Facebook)
+* Password reset workflow
+* User avatar (Gravatar, Facebook, etc.)
 * Choose avatar from linked accounts
 * Self stats page
 * Link to Facebook

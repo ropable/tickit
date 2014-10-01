@@ -10,9 +10,8 @@ USER = get_user_model()
 
 
 class ClimbsTestCase(FastFixtureTestCase):
-    '''
-    Defines fixtures and setup common to all model test cases.
-    '''
+    """Defines fixtures and setup common to all model test cases.
+    """
     fixtures = [
         'test-business.json',
         'test-wall.json',

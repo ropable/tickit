@@ -14,9 +14,9 @@ class BusinessDetail(DetailView):
 
 class ClimbDetail(DetailView):
     model = Climb
-    template_name = 'climb_detail.html'
+    template_name = 'climbs/climb_detail.html'
 
 
-class RatingCreate(CreateView):
+class ClimbRate(CreateView):
     model = Rating
-    template_name = 'rating_create.html'
+    template_name = 'climbs/climb_rate.html'

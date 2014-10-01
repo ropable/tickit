@@ -2,10 +2,12 @@
 Local development Django settings for prs2 project.
 Extends the base settings.
 """
+import sys
 from .base import *
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+TESTING = 'test' in sys.argv
 ALLOWED_HOSTS = ['*']
 # Req'd to get django-allauth working while we don't have a mail server running.
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -39,3 +41,4 @@ NOSE_ARGS = [
 
 # Debug Toolbar settings.
 DEBUG_TOOLBAR_PATCH_SETTINGS = True
+
