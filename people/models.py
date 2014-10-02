@@ -1,6 +1,9 @@
-# Django imports
+import hashlib
+
 from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
+
+from allauth.socialaccount.models import SocialAccount
 
 
 class ClimbsUserManager(BaseUserManager):
@@ -66,3 +69,11 @@ class ClimbsUser(AbstractBaseUser):
         "Is the user a member of staff?"
         # Simplest possible answer: All admins are staff
         return self.is_admin
+
+    def profile_image_url(self):
+        fb_uid = SocialAccount.objects.filter(user_id=self.pk, provider='facebook')
+
+        if len(fb_uid):
+            return "http://graph.facebook.com/{}/picture?width=15&height=15".format(fb_uid[0].uid)
+
+        return "http://www.gravatar.com/avatar/{}?s=15".format(hashlib.md5(self.email).hexdigest())
