@@ -7,7 +7,6 @@ from .base import *
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-TESTING = 'test' in sys.argv
 ALLOWED_HOSTS = ['*']
 # Req'd to get django-allauth working while we don't have a mail server running.
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -28,6 +27,7 @@ DATABASES = {
 ATOMIC_REQUESTS = True
 
 # Test runner settings.
+TESTING = 'test' in sys.argv
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     '--nologcapture',
@@ -41,4 +41,3 @@ NOSE_ARGS = [
 
 # Debug Toolbar settings.
 DEBUG_TOOLBAR_PATCH_SETTINGS = True
-
