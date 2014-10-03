@@ -74,6 +74,6 @@ class ClimbsUser(AbstractBaseUser):
         fb_uid = SocialAccount.objects.filter(user_id=self.pk, provider='facebook')
 
         if len(fb_uid):
-            return "http://graph.facebook.com/{}/picture?width=15&height=15".format(fb_uid[0].uid)
+            return "http://graph.facebook.com/{}/picture?width=40&height=40".format(fb_uid[0].uid)
 
-        return "http://www.gravatar.com/avatar/{}?s=15".format(hashlib.md5(self.email).hexdigest())
+        return "http://www.gravatar.com/avatar/{}?s=40".format(hashlib.md5(self.email).hexdigest())

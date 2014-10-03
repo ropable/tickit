@@ -1,3 +1,15 @@
+# URLs
+
+/
+/users/<pk>/
+/users/<pk>/edit/
+/business/create/
+/business/<pk>
+/climb/create/
+/climb/<pk>/
+/climb/<pk>/rate/
+
+
 # Static pages
 
 * Home/landing page
@@ -13,6 +25,7 @@
 
 # Business admin
 
+* Dashboard overview page
 * Business create/edit
 * Wall create/edit
 * Print management
@@ -34,7 +47,7 @@
 
 # User admin
 
-* User dashboard
+* Profile settings page
 * Self details create/edit
 * Email verification workflow
 * Password reset workflow

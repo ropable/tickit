@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/3.2/css/bootstrap.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}font-awesome/4.2.0/css/font-awesome.css" />
     <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap-social/bootstrap-social.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/app.css" />
     <!-- Account for fixed static navbar at the top of page -->
     <style type="text/css">
         body { padding-top: 50px; }
@@ -31,7 +32,6 @@
 </head>
 <body>
     <header>
-        <!-- Header -->
         <nav id="nav-main" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -50,11 +50,12 @@
                         <li><a href="/">About</a></li>
                         {% if user.is_authenticated %}
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="{{ request.user.profile_image_url }}" /> <i class="fa fa-chevron-down"></i>
+                                <a href="#" class="dropdown-toggle nav-main-user-dropdown" data-toggle="dropdown">
+                                    <img class="nav-main-avatar" src="{{ request.user.profile_image_url }}" /> <i class="fa fa-chevron-down"></i>
                                 </a>
                               <ul class="dropdown-menu" role="menu">
                                 <li><a href="#">Dashboard</a></li>
+                                <li><a href="#">Profile settings</a></li>
                                 <li class="divider"></li>
                                 <li><a href="{% url 'account_logout' %}"><i class="fa fa-sign-out"></i> Log out</a></li>
                               </ul>
@@ -76,44 +77,47 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container -->
         </nav>
-    <header>
+    </header>
 
-        <!-- Breadcrumbs -->
-        {% if breadcrumbs %}
-            <div class="row">
-                <div class="col-md-12">
-                    <ol class="breadcrumb">
-                        {{ breadcrumbs|safe }}
-                    </ol>
-                </div>
-            </div>
-        {% endif %}
-
-        <!-- Messages -->
-        {% if request.user.is_authenticated and messages %}
-            <div class="row">
-                <div class="col-md-12">
-                    {% for message in messages %}
-                    <div class="alert{% if message.tags %} alert-{{ message.tags }}{% endif %}">
-                        {{ message|safe }}
+    <section id="content">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            {% if breadcrumbs %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <ol class="breadcrumb">
+                            {{ breadcrumbs|safe }}
+                        </ol>
                     </div>
-                    {% endfor %}
                 </div>
-            </div>
-        {% endif %}
+            {% endif %}
 
-        <!-- Page content -->
-        {% block content %}{% endblock %}
+            <!-- Messages -->
+            {% if request.user.is_authenticated and messages %}
+                <div class="row">
+                    <div class="col-md-12">
+                        {% for message in messages %}
+                        <div class="alert{% if message.tags %} alert-{{ message.tags }}{% endif %}">
+                            {{ message|safe }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
 
-        {% block extra_body %}{% endblock %}
+            <!-- Page content -->
+            {% block content %}{% endblock %}
 
-        <!-- Footer -->
-        {% block pagefooter %}{% endblock %}
+            {% block extra_body %}{% endblock %}
 
-        <!-- JavaScript placed at the end of the document so that pages load faster -->
-        <script src="{{ STATIC_URL }}jquery/js/jquery.js"></script>
-        <script src="{{ STATIC_URL }}bootstrap/3.2/js/bootstrap.min.js"></script>
-        {% block extra_js %}{% endblock %}
-    </div><!-- /.container-fluid -->
+            <!-- Footer -->
+            {% block pagefooter %}{% endblock %}
+        </div><!-- /.container -->
+    </section>
+
+    <!-- JavaScript placed at the end of the document so that pages load faster -->
+    <script src="{{ STATIC_URL }}jquery/js/jquery.js"></script>
+    <script src="{{ STATIC_URL }}bootstrap/3.2/js/bootstrap.min.js"></script>
+    {% block extra_js %}{% endblock %}
 </body>
 </html>

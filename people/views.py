@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.views.generic import DetailView
+from .models import ClimbsUser
 
-# Create your views here.
+
+class ClimbsUserDetail(DetailView):
+    model = ClimbsUser
+    template_name = 'people/climbsuser_detail.html'

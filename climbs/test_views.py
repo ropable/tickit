@@ -19,7 +19,7 @@ class ClimbDetailViewTest(TestCase):
             self.assertEqual(response.status_code, 200)
 
     def test_get_content(self):
-        # Test response status == 200.
+        # Test response contains the expected content.
         for i in Climb.objects.all():
             url = reverse('climb_rate', kwargs={'pk': i.pk})
             response = self.client.get(url)
@@ -41,7 +41,7 @@ class ClimbRateViewTest(TestCase):
             self.assertEqual(response.status_code, 200)
 
     def test_get_content(self):
-        # Test response status == 200.
+        # Test response contains the expected content.
         for i in Climb.objects.all():
             url = reverse('climb_rate', kwargs={'pk': i.pk})
             response = self.client.get(url)
