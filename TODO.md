@@ -4,7 +4,7 @@
 /users/<pk>/
 /users/<pk>/edit/
 /business/create/
-/business/<pk>
+/business/<slug>
 /climb/create/
 /climb/<pk>/
 /climb/<pk>/rate/
@@ -25,6 +25,7 @@
 
 # Business admin
 
+* Business detail/splash page
 * Dashboard overview page
 * Business create/edit
 * Wall create/edit

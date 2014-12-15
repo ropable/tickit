@@ -48,17 +48,17 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 TEMPLATE_CONTEXT_PROCESSORS = (
-    "django.core.context_processors.request",  # Required by Grappelli and allauth
-    "django.contrib.auth.context_processors.auth",
-    "django.core.context_processors.debug",
-    "django.core.context_processors.i18n",
-    "django.core.context_processors.media",
-    "django.core.context_processors.static",
-    "django.core.context_processors.tz",
-    "django.contrib.messages.context_processors.messages",
+    'django.core.context_processors.request',  # Required by Grappelli and allauth
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.tz',
+    'django.contrib.messages.context_processors.messages',
     # allauth specific context processors
-    "allauth.account.context_processors.account",
-    "allauth.socialaccount.context_processors.socialaccount",
+    'allauth.account.context_processors.account',
+    'allauth.socialaccount.context_processors.socialaccount',
 )
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'templates'),
@@ -76,9 +76,9 @@ AUTH_USER_MODEL = 'people.ClimbsUser'
 ANONYMOUS_USER_ID = -1
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
-    "django.contrib.auth.backends.ModelBackend",
+    'django.contrib.auth.backends.ModelBackend',
     # `allauth` specific authentication methods, such as login by e-mail
-    "allauth.account.auth_backends.AuthenticationBackend",
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
 # django-allauth configuration
 ACCOUNT_AUTHENTICATION_METHOD = ('email')
@@ -100,11 +100,9 @@ SOCIALACCOUNT_PROVIDERS = {
 
 
 # Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 # NOTE: Handled individually in each env-specific settings file.
 
 # Internationalization
-# https://docs.djangoproject.com/en/1.6/topics/i18n/
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Australia/Perth'
 USE_I18N = True
@@ -112,7 +110,6 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images) and user-uploaded media.
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -153,7 +150,7 @@ LOGGING = {
             'level': 'DEBUG',
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': 'logs/django_request.log',
-            'maxBytes': 1024 * 1024 * 20, # 20 Mb
+            'maxBytes': 1024 * 1024 * 20,  # 20 Mb
             'backupCount': 5,
             'formatter': 'standard',
         },
@@ -170,4 +167,12 @@ LOGGING = {
             'propagate': False
         },
     }
+}
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    #'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'),
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGINATE_BY': 100,
 }

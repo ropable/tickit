@@ -7,10 +7,11 @@ django-wsgiserver==0.8.0rc1
 django-extensions==1.4.0
 django-model-utils==2.2
 django-grappelli==2.6.1
-djangorestframework==2.4.3
+djangorestframework==3.0.1
 markdown==2.5.1  # Required for browsable API
 django-filter==0.8
 dj-static==0.0.6
 django-allauth==0.18.0
+django-guardian==1.2.4
 #django-braces==1.4.0
 #django-storages==1.1.8
